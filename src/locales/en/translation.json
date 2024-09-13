@@ -1,0 +1,17 @@
+{
+  "login": {
+    "title": "Sign In",
+    "welcome": "Welcome Back!",
+    "username": "Username",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "submit": "Submit",
+    "registerAs": "Register as a",
+    "teacher": "Teacher",
+    "donor": "Donor",
+    "errors": {
+      "usernameRequired": "Username is required",
+      "passwordRequired": "Password is required"
+    }
+  }
+}

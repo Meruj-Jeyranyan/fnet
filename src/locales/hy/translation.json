@@ -1,0 +1,17 @@
+{
+  "login": {
+    "title": "Մուտք գործել",
+    "welcome": "Բարի վերադարձ!",
+    "username": "Օգտանուն",
+    "password": "Գաղտնաբառ",
+    "forgotPassword": "Մոռացե՞լ եք գաղտնաբառը:",
+    "submit": "Հաստատել",
+    "registerAs": "Գրանցվել որպես",
+    "teacher": "Ուսուցիչ",
+    "donor": "Նվիրատու",
+    "errors": {
+      "usernameRequired": "Օգտանունը պարտադիր է",
+      "passwordRequired": "Գաղտնաբառը պարտադիր է"
+    }
+  }
+}

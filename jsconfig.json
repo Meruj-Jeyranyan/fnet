@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "styles/*": ["styles/*"],
+      "components/*": ["components/*"],
+      "hooks/*": ["hooks/*"],
+      "pages/*": ["pages/*"],
+      "assets/*": ["assets/*"],
+      "utils/*": ["utils/*"],
+      "api/*": ["api/*"],
+      "i18n/*":["i18n/*"],
+      "locales/*":["locales/*"]
+    }
+  },
+  "include": ["src/**/*.js"] 
+}

@@ -1,0 +1,17 @@
+{
+  "login": {
+    "title": "Войти",
+    "welcome": "С возвращением!",
+    "username": "Имя пользователя",
+    "password": "Пароль",
+    "forgotPassword": "Забыли пароль?",
+    "submit": "Отправить",
+    "registerAs": "Зарегистрироваться как",
+    "teacher": "Учитель",
+    "donor": "Донор",
+    "errors": {
+      "usernameRequired": "Требуется имя пользователя",
+      "passwordRequired": "Требуется пароль"
+    }
+  }
+}
