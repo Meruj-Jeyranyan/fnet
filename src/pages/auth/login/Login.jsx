@@ -1,8 +1,11 @@
 import { useForm, Controller } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Input from "components/input";
 import Button from "components/button";
+import Notif from "../notif/Notif";
 import {
   Form,
   Title,
@@ -13,11 +16,10 @@ import {
   RegOptionText,
   ForgotPasswordLink,
 } from "./Login.styles";
-import Notif from "../notif/Notif";
-import { useTranslation } from "react-i18next";
 import "i18n/i18n.js";
 
 const Login = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const schema = yup.object().shape({
@@ -33,9 +35,9 @@ const Login = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  const onSubmit = (data) => console.log(data);
+
+  const handleForgotLinkClick = () => navigate("/forgot");
 
   return (
     <Container>
@@ -70,7 +72,9 @@ const Login = () => {
               />
             )}
           />
-          <ForgotPasswordLink>{t("login.forgotPassword")}</ForgotPasswordLink>
+          <ForgotPasswordLink onClick={handleForgotLinkClick}>
+            {t("login.forgotPassword")}
+          </ForgotPasswordLink>
 
           <Button type="submit" primary>
             {t("login.submit")}
@@ -80,8 +84,8 @@ const Login = () => {
       <Notif />
       <RegOptionText>{t("login.registerAs")}</RegOptionText>
       <RowDiv>
-        <Button secondary>{t("login.teacher")}</Button>
-        <Button secondary>{t("login.donor")}</Button>
+        <Button>{t("login.teacher")}</Button>
+        <Button>{t("login.donor")}</Button>
       </RowDiv>
     </Container>
   );

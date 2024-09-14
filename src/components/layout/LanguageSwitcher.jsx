@@ -14,19 +14,19 @@ const LanguageSwitcher = () => {
   return (
     <LanguageContainer>
       <LanguageButton
-        isActive={activeLang === "en"}
+        $isActive={activeLang === "en"}
         onClick={() => changeLanguage("en")}
       >
         Eng
       </LanguageButton>
       <LanguageButton
-        isActive={activeLang === "hy"}
+        $isActive={activeLang === "hy"}
         onClick={() => changeLanguage("hy")}
       >
         Հայ
       </LanguageButton>
       <LanguageButton
-        isActive={activeLang === "ru"}
+        $isActive={activeLang === "ru"}
         onClick={() => changeLanguage("ru")}
       >
         Рус

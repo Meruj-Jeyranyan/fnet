@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "components/layout";
-import Login from "../pages/auth/login";
-import Register from "../pages/auth/register";
+import Login from "pages/auth/login";
+import Register from "pages/auth/register";
+import Forgot from "pages/auth/forgot";
 
 const AppRoute = () => {
   return (
@@ -20,6 +21,14 @@ const AppRoute = () => {
           element={
             <Layout>
               <Register />
+            </Layout>
+          }
+        />
+        <Route
+          path="/forgot"
+          element={
+            <Layout>
+              <Forgot />
             </Layout>
           }
         />

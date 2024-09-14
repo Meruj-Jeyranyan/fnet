@@ -29,7 +29,7 @@ export const LanguageContainer = styled.div`
 `;
 
 export const LanguageButton = styled.a`
-  color: ${({ isActive }) => (isActive ? "#F8F8F8" : "#e2e2e2")};
+  color: ${({ $isActive }) => ($isActive ? "#F8F8F8" : "#e2e2e2")};
   border: none;
   padding: 10px;
   font-size: 12px;

@@ -1,17 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 111,
+  email: 111,
+  forgotStep: 1,
 };
 
 const authSlice = createSlice({
   name: "counter",
   initialState,
-  reducers: {},
+  reducers: {
+    setForgotStep: (state, action) => {
+      state.forgotStep = action.payload;
+    },
+  },
 });
 
-export const {} = authSlice.actions;
+export const { setForgotStep } = authSlice.actions;
 
-export const selectAuthInfo = (state) => state.auth.value;
+export const selectRegisteredEmail = (state) => state.auth.email;
 
 export default authSlice.reducer;

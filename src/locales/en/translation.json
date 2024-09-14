@@ -13,5 +13,15 @@
       "usernameRequired": "Username is required",
       "passwordRequired": "Password is required"
     }
+  },
+  "forgot": {
+    "title": "Recover Password",
+    "description": "Please enter your email to receive a recovery code",
+    "email": "Email Address",
+    "errors": {
+      "emailRequired": "Email is required",
+      "invalidEmail": "Invalid email"
+    },
+    "submit": "Submit"
   }
 }

@@ -2,11 +2,13 @@ import styled from "styled-components";
 import { theme } from "styles/Theme";
 
 export const Container = styled.div`
-  width: 432px;
+  width: 400px;
+  min-height: 500px;
   margin: 0 auto;
   border-radius: ${theme.border.radius};
   box-shadow: ${theme.boxShadow};
   padding: ${theme.spacing.large};
+  justify-content: space-between;
 
   display: flex;
   flex-direction: column;
