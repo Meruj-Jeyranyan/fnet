@@ -76,10 +76,8 @@ const Modal = ({
             {children}
             {footer && (
               <Footer>
-                <Button ghost onClick={onClose}>
-                  Cancel
-                </Button>
-                <Button variant="primary" onClick={onOk} loading={onOkLoading}>
+                <Button onClick={onClose}>Cancel</Button>
+                <Button primary onClick={onOk} loading={onOkLoading}>
                   Submit
                 </Button>
               </Footer>

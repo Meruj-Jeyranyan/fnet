@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm, Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -11,6 +11,7 @@ import Input from "components/input";
 import Button from "components/button";
 import { Select } from "components/select";
 import PhoneInput from "components/phoneInput";
+import Modal from "components/modal";
 import { RowDiv, Form, StyledLinkButton } from "./Register.styles";
 import { Container } from "../login/Login.styles";
 import * as yup from "yup";
@@ -43,6 +44,8 @@ const Register = () => {
   const userType = useSelector(selectUserRegistrationType);
   const dispatch = useDispatch();
 
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const schema = yup.object().shape({
     name: yup.string().required(t("register.errors.nameRequired")),
     lastName: yup.string().required(t("register.errors.lastNameRequired")),
@@ -65,41 +68,11 @@ const Register = () => {
         t("register.errors.confirmPasswordMatch")
       )
       .required(t("register.errors.confirmPasswordRequired")),
-    country: yup
-      .mixed()
-      .test("is-valid", t("register.errors.countryRequired"), (value) => {
-        return Array.isArray(value)
-          ? value.every((v) => v && v.value && v.label)
-          : value && value.value && value.label;
-      }),
-    region: yup
-      .mixed()
-      .test("is-valid", t("register.errors.regionRequired"), (value) => {
-        return Array.isArray(value)
-          ? value.every((v) => v && v.value && v.label)
-          : value && value.value && value.label;
-      }),
-    city: yup
-      .mixed()
-      .test("is-valid", t("register.errors.cityRequired"), (value) => {
-        return Array.isArray(value)
-          ? value.every((v) => v && v.value && v.label)
-          : value && value.value && value.label;
-      }),
-    subject: yup
-      .mixed()
-      .test("is-valid", t("register.errors.subjectRequired"), (value) => {
-        return Array.isArray(value)
-          ? value.every((v) => v && v.value && v.label)
-          : value && value.value && value.label;
-      }),
-    grade: yup
-      .mixed()
-      .test("is-valid", t("register.errors.gradeRequired"), (value) => {
-        return Array.isArray(value)
-          ? value.every((v) => v && v.value && v.label)
-          : value && value.value && value.label;
-      }),
+    country: yup.mixed(),
+    region: yup.mixed(),
+    city: yup.mixed(),
+    subject: yup.mixed(),
+    grade: yup.mixed(),
   });
 
   const handleClickUserTypeChange = () => {
@@ -115,7 +88,11 @@ const Register = () => {
   });
 
   const onSubmit = (data) => {
-    console.log("Form Data: ", data);
+    if (data.email === "asd@gmail.com") {
+      setModalOpen(true);
+    } else {
+      console.log("Form Data: ", data);
+    }
   };
 
   useEffect(() => {
@@ -221,6 +198,7 @@ const Register = () => {
             />
           )}
         />
+
         {userType === "teacher" && (
           <>
             <Controller
@@ -252,6 +230,7 @@ const Register = () => {
             />
           </>
         )}
+
         <Controller
           name="password"
           control={control}
@@ -290,6 +269,16 @@ const Register = () => {
           </Button>
         </RowDiv>
       </Form>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        title="Registration Error"
+        footer={false}
+        onOk={() => setModalOpen(false)}
+      >
+        <p>Email already registered</p>
+      </Modal>
     </Container>
   );
 };
