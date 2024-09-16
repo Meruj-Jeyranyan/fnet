@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -18,8 +20,6 @@ import {
   ForgotPasswordLink,
 } from "./Login.styles";
 import "i18n/i18n.js";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
