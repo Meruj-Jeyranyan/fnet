@@ -4,7 +4,11 @@
  * @returns {boolean} - Returns true if the variable is an object, false otherwise.
  */
 export const isObject = (variable) => {
-  return typeof variable === "object" && variable !== null && !Array.isArray(variable);
+  return (
+    typeof variable === "object" &&
+    variable !== null &&
+    !Array.isArray(variable)
+  );
 };
 
 /**
@@ -13,7 +17,11 @@ export const isObject = (variable) => {
  * @returns {boolean} - Returns true if the object is empty, false otherwise.
  */
 export const isObjectEmpty = (value) => {
-  return isObject(value) && Object.keys(value).length === 0 && value.constructor === Object;
+  return (
+    isObject(value) &&
+    Object.keys(value).length === 0 &&
+    value.constructor === Object
+  );
 };
 
 /**
@@ -134,7 +142,9 @@ export const formatNumber = (
   }
 
   if (typeof decimalPlaces !== "number") {
-    throw new Error("Invalid decimalPlaces value. Expected a non-negative number.");
+    throw new Error(
+      "Invalid decimalPlaces value. Expected a non-negative number."
+    );
   }
 
   if (typeof useThousandsSeparator !== "boolean") {
@@ -143,7 +153,8 @@ export const formatNumber = (
 
   if (
     useThousandsSeparator &&
-    (typeof thousandsSeparator !== "string" || typeof decimalSeparator !== "string")
+    (typeof thousandsSeparator !== "string" ||
+      typeof decimalSeparator !== "string")
   ) {
     throw new Error("Invalid separator. Expected string values.");
   }
@@ -162,15 +173,4 @@ export const formatNumber = (
   }
 
   return parts.join(decimalSeparator);
-};
-
-export const debounce = (callback, delay) => {
-  let timeoutId;
-
-  return (...args) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      callback(...args);
-    }, delay);
-  };
 };

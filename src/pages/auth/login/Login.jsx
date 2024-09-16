@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { setUserRegistrationType } from "features/auth/authSlice";
 import Input from "components/input";
 import Button from "components/button";
 import Notif from "../notif/Notif";
@@ -17,10 +18,14 @@ import {
   ForgotPasswordLink,
 } from "./Login.styles";
 import "i18n/i18n.js";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const dispatch = useDispatch();
 
   const schema = yup.object().shape({
     username: yup.string().required(t("login.errors.usernameRequired")),
@@ -38,6 +43,16 @@ const Login = () => {
   const onSubmit = (data) => console.log(data);
 
   const handleForgotLinkClick = () => navigate("/forgot");
+
+  const handleRegisterNavigate = (type) => {
+    dispatch(setUserRegistrationType(type));
+    localStorage.setItem("userType", type);
+    navigate("/register");
+  };
+
+  useEffect(() => {
+    dispatch(setUserRegistrationType(null));
+  }, [dispatch]);
 
   return (
     <Container>
@@ -84,8 +99,12 @@ const Login = () => {
       <Notif />
       <RegOptionText>{t("login.registerAs")}</RegOptionText>
       <RowDiv>
-        <Button>{t("login.teacher")}</Button>
-        <Button>{t("login.donor")}</Button>
+        <Button onClick={() => handleRegisterNavigate("teacher")}>
+          {t("login.teacher")}
+        </Button>
+        <Button onClick={() => handleRegisterNavigate("donor")}>
+          {t("login.donor")}
+        </Button>
       </RowDiv>
     </Container>
   );

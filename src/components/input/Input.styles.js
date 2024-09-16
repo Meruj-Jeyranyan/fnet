@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${(props) => (props.fullWidth ? "100%" : "auto")};
+  width: ${(props) => (props.$fullWidth ? "100%" : "auto")};
   margin-bottom: 16px;
   position: relative;
 `;
@@ -11,7 +11,7 @@ export const InputWrapper = styled.div`
 export const StyledInput = styled.input`
   padding: 8px;
   border: 1px solid ${(props) => (props.$error ? "red" : "#194866CC")};
-  height: 38px;
+  height: 30px;
   border-radius: 12px;
   font-size: 16px;
   outline: none;

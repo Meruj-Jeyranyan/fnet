@@ -17,11 +17,53 @@
   "forgot": {
     "title": "Վերականգնել գաղտնաբառը",
     "description": "Խնդրում ենք մուտքագրել ձեր էլ. հասցեն վերականգնման կոդ ստանալու համար",
+    "description2": "Խնդրում ենք մուտքագրել կոդը և ձեր նոր գաղտնաբառը",
     "email": "Էլ. փոստ",
+    "code": "Վերականգնման կոդ",
+    "password": "Նոր գաղտնաբառ",
+    "confirmPassword": "Հաստատել գաղտնաբառը",
     "errors": {
       "emailRequired": "Էլ. փոստը պարտադիր է",
-      "invalidEmail": "Սխալ էլ․ փոստ"
+      "invalidEmail": "Սխալ էլ․ փոստ",
+      "codeRequired": "Կոդը պարտադիր է",
+      "passwordRequired": "Գաղտնաբառը պարտադիր է",
+      "passwordMin": "Գաղտնաբառը պետք է լինի առնվազն 8 նիշ",
+      "confirmPasswordRequired": "Հաստատման գաղտնաբառը պարտադիր է",
+      "passwordsMustMatch": "Գաղտնաբառերը պետք է համընկնեն"
     },
-    "submit": "Ուղարկել"
+    "submit": "Ուղարկել",
+    "resendCode": "Կրկին ուղարկել կոդը"
+  },
+  "register": {
+    "name": "Անուն",
+    "lastName": "Ազգանուն",
+    "email": "Էլ. փոստ",
+    "phoneNumber": "Հեռախոսահամար",
+    "password": "Գաղտնաբառ",
+    "confirmPassword": "Հաստատեք գաղտնաբառը",
+    "country": "Երկիր",
+    "region": "Մարզ",
+    "city": "Քաղաք",
+    "subject": "Առարկա",
+    "grade": "Դասարան",
+    "Register as": "Գրանցվել որպես",
+    "ok": "Հաստատել",
+    "errors": {
+      "nameRequired": "Անունը պարտադիր է",
+      "lastNameRequired": "Ազգանունը պարտադիր է",
+      "emailRequired": "Էլ. փոստը պարտադիր է",
+      "invalidEmail": "Էլ. փոստի հասցեն սխալ է",
+      "phoneRequired": "Հեռախոսահամարը պարտադիր է",
+      "phoneInvalid": "Հեռախոսահամարի ձևաչափը սխալ է",
+      "passwordRequired": "Գաղտնաբառը պարտադիր է",
+      "passwordMin": "Գաղտնաբառը պետք է լինի առնվազն 8 նիշ",
+      "confirmPasswordRequired": "Խնդրում ենք հաստատել գաղտնաբառը",
+      "confirmPasswordMatch": "Գաղտնաբառերը չեն համընկնում",
+      "countryRequired": "Երկիրը պարտադիր է",
+      "regionRequired": "Մարզը պարտադիր է",
+      "cityRequired": "Քաղաքը պարտադիր է",
+      "subjectRequired": "Առարկան պարտադիր է",
+      "gradeRequired": "Դասարանը պարտադիր է"
+    }
   }
 }

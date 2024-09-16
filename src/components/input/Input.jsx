@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import { forwardRef, useState } from "react";
 import {
   InputWrapper,
   StyledInput,
@@ -20,7 +20,7 @@ const Input = forwardRef(
     const inputType = type === "password" && showPassword ? "text" : type;
 
     return (
-      <InputWrapper fullWidth={fullWidth}>
+      <InputWrapper $fullWidth={fullWidth}>
         <StyledInput ref={ref} type={inputType} $error={error} {...rest} />
         {type === "password" && (
           <IconWrapper onClick={handleClickShowPassword}>

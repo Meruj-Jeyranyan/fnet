@@ -7,3 +7,18 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.css-1u9des2-indicatorSeparator {
+  display: none !important;
+}
+
+.error-border .css-1poabml-control {
+  border: 1px solid red;
+}
+
+.error-border .css-1poabml-control {
+  border: 1px solid red;
+}
+.error-border .css-1poabml-control:hover {
+  border: 1px solid red;
+}
